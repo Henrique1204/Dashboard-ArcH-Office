@@ -53,7 +53,7 @@ const Cadastrar = () => {
     };
 
     return (
-        <section className={estilos.sessao}>
+        <section className={`${estilos.sessao} animarEntrada`}>
             <h1>Cadastrar</h1>
 
             <form onSubmit={handleSubmit}>
