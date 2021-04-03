@@ -1,7 +1,10 @@
 .header {
+    width: 100%;
     padding: 16px;
     border-top: 3px solid var(--amarelo);
     background-color: var(--cor-fundo);
+    position: fixed;
+    top: 0;
 }
 
 .logo {

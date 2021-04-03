@@ -23,6 +23,7 @@ html {
 }
 
 body {
+    padding-top: 83px;
     font-family: var(--fonte-lato);
     color: var(--cor-texto);
     background-color: #FAFAFA;
@@ -39,6 +40,20 @@ ul, li {
 img {
     max-width: 100%;
     display: block;
+}
+
+main {
+    min-height: calc(100vh - 83px);
+}
+
+@media (max-width: 730px) {
+    body {
+        padding-top: 155px;
+    }
+
+    main {
+        min-height: calc(100vh - 155px);
+    }
 }
 
 /* Classes padrões */
