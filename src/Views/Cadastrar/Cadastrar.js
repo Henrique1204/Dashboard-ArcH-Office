@@ -5,6 +5,7 @@ import useForm from '../../Hooks/useForm.js';
 import { useNavigate } from 'react-router-dom';
 import db from '../../db.json';
 import Radio from "../../Componentes/Form/Radio/Radio";
+import Select from "../../Componentes/Form/Select/Select";
 
 const Cadastrar = () => {
     const usuario = useForm();
@@ -55,27 +56,26 @@ const Cadastrar = () => {
             <h1>Cadastrar</h1>
 
             <form onSubmit={handleSubmit}>
-                <div className={estilos.containerInput}>
+                <div className={estilos.campo}>
                     <Input label="Usuário:" type="text" name="usuario" {...usuario} />
                     <i className="fa fa-user"></i>
                 </div>
 
-                <div className={estilos.containerInput}>
+                <div className={estilos.campo}>
                     <Input label="Senha:" type="password" name="senha" {...senha} />
                     <i className="fa fa-unlock-alt"></i>
                 </div>
     
-                <div className={estilos.containerInput}>
-                    <select name="tipo" onChange={tipo.onChange}>
-                        <option value="">Seleciona o tipo de usuário...</option>
-                        <option value="PESSOA">Pessoa</option>
-                        <option value="EMPRESA">Empresa</option>
-                    </select>
-                    { tipo.erro && <small className={estilos.erro}>{tipo.erro}</small> }
+                <div className={estilos.campo}>
+                    <Select
+                        opcoes={['PESSOA', 'EMPRESA']}
+                        labels={['Pessoa', 'Empresa']}
+                        {...tipo}
+                    />
                 </div>
 
                 {tipo.valor === 'PESSOA' && (
-                    <div className={estilos.containerInput}>
+                    <div className={estilos.campo}>
                         <h3>escolha o sexo:</h3>
                         <Radio opcoes={['M', 'F']} labels={['Masculino', 'Feminino']} {...sexo} />
     
