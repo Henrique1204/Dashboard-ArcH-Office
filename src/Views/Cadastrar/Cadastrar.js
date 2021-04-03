@@ -5,7 +5,7 @@ import Radio from "../../Componentes/Form/Radio/Radio.js";
 import Select from "../../Componentes/Form/Select/Select.js";
 import Button from "../../Componentes/Form/Button/Button.js";
 import useForm from '../../Hooks/useForm.js';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import db from '../../db.json';
 
 const Cadastrar = () => {
@@ -87,6 +87,8 @@ const Cadastrar = () => {
                 <Button loading={loading} texto="Cadastrar" />
                 { erro && <small className={estilos.erro}>{erro}</small> }
             </form>
+
+            <Link to="/login" className={estilos.Link}>Já é Cadastrado? Clique aqui</Link>
         </section>
     );
 };

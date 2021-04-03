@@ -3,7 +3,7 @@ import estilos from "./Login.module.css";
 import Input from '../../Componentes/Form/Input/Input.js';
 import Button from "../../Componentes/Form/Button/Button.js";
 import useForm from '../../Hooks/useForm.js';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import db from '../../db.json';
 
 const Login = () => {
@@ -59,6 +59,8 @@ const Login = () => {
                 <Button loading={loading} texto="Entrar" />
                 { erro && <small className={estilos.erro}>{erro}</small> }
             </form>
+
+            <Link to="/cadastrar" className={estilos.Link}>Não é Cadastrado? Clique aqui</Link>
         </section>
     );
 };
