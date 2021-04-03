@@ -38,9 +38,10 @@
     pointer-events: none;
 }
 
-.sessao .erro {
-    margin-top: 0.5rem;
+.erro {
+    margin-top: 1rem;
     text-align: center;
+    color: #F44;
     display: block;
 }
 

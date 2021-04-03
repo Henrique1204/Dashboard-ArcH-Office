@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
-// Importando telas.
-import Login from './Views/Login/Login.js';
+import Rotas from './Rotas.js';
 
 const App = () => {
   return (
-    <Login />
+    <Rotas />
   );
 };
 

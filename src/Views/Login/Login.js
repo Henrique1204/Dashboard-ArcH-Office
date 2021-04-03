@@ -2,6 +2,7 @@ import React from "react";
 import estilos from "./Login.module.css";
 import Input from '../../Componentes/Form/Input/Input.js';
 import useForm from '../../Hooks/useForm.js';
+import { useNavigate } from 'react-router-dom';
 import db from '../../db.json';
 
 const Login = () => {
@@ -9,23 +10,33 @@ const Login = () => {
     const senha = useForm();
     const [erro, setErro] = React.useState(null);
     const [loading, setLoading] = React.useState(null);
+    const navegar = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         setLoading(true);
+        setErro(null);
 
         if (!usuario.validar() && !senha.validar()) setErro('Dados inválidos!');
 
-        const { usuarios } = db;
+        setTimeout(() => {
+            const { usuarios } = db;
 
-        const isExiste = usuarios.find((usuarioDB) => {
-            return usuarioDB.usuario === usuario.valor && usuarioDB.senha === senha.valor;
-        });
-
-        window.localStorage.removeItem('usuario');
-        if (isExiste) window.localStorage.setItem('usuario', JSON.stringify(isExiste));
-
-        setTimeout(() => setLoading(false), 300);
+            const isExiste = usuarios.find((usuarioDB) => {
+                return usuarioDB.usuario === usuario.valor && usuarioDB.senha === senha.valor;
+            });
+    
+            if (isExiste) {
+                window.localStorage.setItem('usuario', JSON.stringify(isExiste));
+                navegar('/');
+            } else {
+                window.localStorage.removeItem('usuario');
+                setErro('Usuário não existe!');
+            }
+    
+            setLoading(false);
+        }, 300);
     };
 
     return (
