@@ -1,3 +1,10 @@
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: initial;
+    }
+}
+
 .modal {
     width: 300px;
     padding: 1rem;
@@ -7,6 +14,9 @@
     position: absolute;
     top: calc(100% + 5px);
     right: 0;
+    opacity: 0;
+    transform: translateX(3rem);
+    animation: aparecer 0.4s forwards;
 }
 
 .modal button {

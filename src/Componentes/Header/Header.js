@@ -5,6 +5,7 @@ import ModalUsuario from '../ModalUsuario/ModalUsuario.js';
 import { useLocation } from 'react-router';
 
 const Header = () => {
+    const [modalAtivo, setModalAtivo] = React.useState(false);
     const { pathname } = useLocation();
 
     if (pathname === '/login' || pathname === '/cadastrar') return null;
@@ -21,11 +22,11 @@ const Header = () => {
                     <i className="fa fa-search"></i>
                 </div>
 
-                <button className={estilos.usuario}>
+                <button className={estilos.usuario} onClick={() => setModalAtivo(!modalAtivo)}>
                     <span className={estilos.notificacao}>0</span>
                 </button>
 
-                <ModalUsuario />
+                { modalAtivo && <ModalUsuario setAtivo={setModalAtivo} /> }
             </div>
         </header>
     );

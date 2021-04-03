@@ -2,7 +2,7 @@ import React from 'react';
 import estilos from './ModalUsuario.module.css';
 import db from '../../db.json';
 
-const ModalUsuario = () => {
+const ModalUsuario = ({ setAtivo }) => {
     const [nome, setNome] = React.useState(null);
     const [notificacoes, setNotificacoes] = React.useState(null);
 
@@ -19,7 +19,7 @@ const ModalUsuario = () => {
 
     return (
         <div className={estilos.modal}>
-            <button className={estilos.fechar}>
+            <button className={estilos.fechar} onClick={() => setAtivo(false)}>
                 <i className="fa fa-times"></i>
             </button>
             <h2 className={estilos.nome}>{nome}</h2>
