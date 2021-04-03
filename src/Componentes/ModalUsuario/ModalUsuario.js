@@ -1,10 +1,17 @@
 import React from 'react';
 import estilos from './ModalUsuario.module.css';
 import db from '../../db.json';
+import { useNavigate } from 'react-router';
 
 const ModalUsuario = ({ setAtivo }) => {
     const [nome, setNome] = React.useState(null);
     const [notificacoes, setNotificacoes] = React.useState(null);
+    const navegar = useNavigate();
+
+    const logout = () => {
+        window.localStorage.removeItem('usuario');
+        navegar('/login');
+    };
 
     React.useEffect(() => {
         const usuarioLogado = window.localStorage.getItem('usuario');
@@ -30,7 +37,7 @@ const ModalUsuario = ({ setAtivo }) => {
                 ))  }
             </ul>
 
-            <button className={estilos.sair}>Sair</button>
+            <button className={estilos.sair} onClick={logout}>Sair</button>
         </div>
     );
 };
