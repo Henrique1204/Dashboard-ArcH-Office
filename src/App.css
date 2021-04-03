@@ -40,35 +40,3 @@ img {
     max-width: 100%;
     display: block;
 }
-
-/* Estios gerais */
-label {
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"],
-select,
-textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 2px;
-    border: 2px solid var(--cinza);
-    font-size: 1rem;
-    background-color: #F4F4F4;
-    outline: none;
-    transition: 0.3s ease;
-}
-
-input[type="text"]:hover, input[type="text"]:focus,
-input[type="email"]:hover, input[type="email"]:focus,
-input[type="password"]:hover, input[type="password"]:focus,
-input[type="number"]:hover, input[type="number"]:focus,
-textarea:hover, textarea:focus {
-    border-color: var(--amarelo);
-    background-color: #FFF;
-    box-shadow: 2px 2px 4px rgba(37, 35, 35, 0.2);
-}

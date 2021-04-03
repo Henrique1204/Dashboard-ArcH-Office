@@ -33,16 +33,12 @@
 .sessao i {
     font-size: 1.25rem;
     position: absolute;
-    top: 11px;
+    top: 2.4rem;
     right: 0.5rem;
     pointer-events: none;
 }
 
-.erro {
-    color: #F44;
-}
-
-.sessao form > .erro {
+.sessao .erro {
     margin-top: 0.5rem;
     text-align: center;
     display: block;
@@ -73,7 +69,7 @@
     transform: scale(1.1);
 }
 
-.Link{
+.Link {
     margin-top: 1rem;
     text-decoration: underline;
     color: #6a9bb8;
