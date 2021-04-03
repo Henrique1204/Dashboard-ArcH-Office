@@ -19,6 +19,12 @@
     animation: aparecer 0.4s forwards;
 }
 
+@media (max-width: 730px) {
+    .modal {
+        top: 53px;
+    }
+}
+
 .modal button {
     font-size: 1.125rem;
     border: none;

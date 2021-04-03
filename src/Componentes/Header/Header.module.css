@@ -41,6 +41,7 @@
     height: 48px;
     border: none;
     border-radius: 50%;
+    margin-left: 92px;
     background-color: #FFF;
     position: relative;
     cursor: pointer;
@@ -70,6 +71,10 @@
 
     .buscar {
         max-width: 220px;
+    }
+
+    .usuario {
+        margin-left: 0;
     }
 }
 

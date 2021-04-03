@@ -23,7 +23,7 @@ const Header = () => {
                 </div>
 
                 <button className={estilos.usuario} onClick={() => setModalAtivo(!modalAtivo)}>
-                    <span className={estilos.notificacao}>0</span>
+                    <span className={estilos.notificacao}>2</span>
                 </button>
 
                 { modalAtivo && <ModalUsuario setAtivo={setModalAtivo} /> }

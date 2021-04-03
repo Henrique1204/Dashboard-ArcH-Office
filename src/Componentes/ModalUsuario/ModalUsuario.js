@@ -32,8 +32,8 @@ const ModalUsuario = ({ setAtivo }) => {
             <h2 className={estilos.nome}>{nome}</h2>
 
             <ul className={estilos.notificacoes}>
-                { notificacoes && notificacoes.map((notificacao) => (
-                    <li>{notificacao}</li>
+                { notificacoes && notificacoes.map((notificacao, i) => (
+                    <li key={`notificacao_${i}`}>{notificacao}</li>
                 ))  }
             </ul>
 
