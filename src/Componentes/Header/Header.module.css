@@ -1,0 +1,93 @@
+.header {
+    padding: 16px;
+    border-top: 3px solid var(--amarelo);
+    background-color: var(--cor-fundo);
+}
+
+.logo {
+    max-width: 140px;
+}
+
+.busca {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.busca input {
+    width: 100%;
+    padding: 0.75rem;
+    padding-right: 2rem;
+    border: none;
+    border-radius: 2px;
+    background-color: #FFF;
+    outline: none;
+}
+
+.busca:hover, .busca:focus {
+    transform: scale(1.1);
+}
+
+.busca i {
+    position: absolute;
+    right: 0.75rem;
+}
+
+.usuario {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background-color: #FFF;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+.notificacao {
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 0.75rem;
+    border-radius: 50%;
+    color: #FFF;
+    background-color: var(--amarelo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -0.25rem;
+    right: -0.25rem;
+    pointer-events: none;
+}
+
+@media (max-width: 990px) {
+    .containerHeader {
+        max-width: 100%;
+    }
+
+    .buscar {
+        max-width: 220px;
+    }
+}
+
+@media (max-width: 730px) {
+    .containerHeader {
+        max-width: 300px;
+    }
+
+    .logo {
+        order: 1;
+    }
+    
+    .usuario {
+        order: 2;
+    }
+
+    .busca {
+        margin-top: 2rem;
+        order: 3;
+    }
+}

@@ -35,7 +35,7 @@ const Cadastrar = () => {
                     const usuarioNovo = {
                         usuario: usuario.valor,
                         tipo: tipo.valor,
-                        sexo: sexo.valor
+                        sexo: sexo.valor || null
                     };
     
                     window.localStorage.setItem('usuario', JSON.stringify(usuarioNovo));
