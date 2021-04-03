@@ -1,0 +1,16 @@
+{
+    "usuarios": [
+        {
+            "usuario": "Arch Office",
+            "senha": "1234",
+            "tipo": "EMPRESA",
+            "sexo": null
+        },
+        {
+            "usuario": "Paulo",
+            "senha": "1234",
+            "tipo": "PESSOA",
+            "sexo": "M"
+        }
+    ]
+}
