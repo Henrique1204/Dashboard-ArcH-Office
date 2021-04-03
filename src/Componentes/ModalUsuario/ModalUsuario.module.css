@@ -1,0 +1,71 @@
+.modal {
+    width: 300px;
+    padding: 1rem;
+    border-radius: 2px;
+    background-color: #FFF;
+    box-shadow: var(--sombra);
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+}
+
+.modal button {
+    font-size: 1.125rem;
+    border: none;
+    color: var(--cinza);
+    background-color: #FFF;
+    cursor: pointer;
+    transition: 0.3s ease;
+    outline: none;
+}
+
+.fechar {
+    padding: 0.2rem;
+    position: absolute;
+    top: 0.3rem;
+    right: 0.8rem;
+}
+
+.fechar:hover {
+    transform: rotate(90deg);
+}
+
+.nome {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--amarelo);
+}
+
+.notificacoes {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(37, 35, 35, 0.1);
+    margin-bottom: 0.75rem;
+}
+
+.notificacoes li {
+    font-size: 0.875rem;
+}
+
+.notificacoes li {
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+}
+
+.notificacoes li::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--cinza);
+    display: inline-block;
+}
+
+.notificacoes li + li {
+    margin-top: 0.5rem;
+}
+
+.sair:hover, .sair.focus {
+    color: var(--cor-texto);
+}

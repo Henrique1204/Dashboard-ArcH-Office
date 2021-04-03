@@ -1,6 +1,7 @@
 import React from 'react';
 import estilos from './Header.module.css';
 import logoImg from '../../Assets/logo.png';
+import ModalUsuario from '../ModalUsuario/ModalUsuario.js';
 import { useLocation } from 'react-router';
 
 const Header = () => {
@@ -23,6 +24,8 @@ const Header = () => {
                 <button className={estilos.usuario}>
                     <span className={estilos.notificacao}>0</span>
                 </button>
+
+                <ModalUsuario />
             </div>
         </header>
     );

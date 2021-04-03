@@ -12,5 +12,9 @@
             "tipo": "PESSOA",
             "sexo": "M"
         }
+    ],
+    "notificacoes": [
+        "Você tem essa notificação.",
+        "E tem essa outra também."
     ]
 }
