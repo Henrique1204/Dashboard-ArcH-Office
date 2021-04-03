@@ -4,10 +4,11 @@ import Input from '../../Componentes/Form/Input/Input.js';
 import useForm from '../../Hooks/useForm.js';
 import { useNavigate } from 'react-router-dom';
 import db from '../../db.json';
+import Radio from "../../Componentes/Form/Radio/Radio";
 
 const Cadastrar = () => {
     const usuario = useForm();
-    const senha = useForm('senha');
+    const senha = useForm();
     const tipo = useForm();
     const sexo = useForm();
 
@@ -21,31 +22,32 @@ const Cadastrar = () => {
         setLoading(true);
         setErro(null);
 
-        if (!usuario.validar() && !senha.validar() && !tipo.validar() && !sexo.validar()) {
-            return setErro('Campos inválidos!');
+        const condicaoSexo = tipo.valor === 'PESSOA' ? sexo.validar() : true;
+        if (usuario.validar() && senha.validar() && tipo.validar() && condicaoSexo) {
+            setTimeout(() => {
+                const { usuarios } = db;
+    
+                const isExiste = usuarios.find((usuarioDB) => usuarioDB.usuario === usuario.valor);
+        
+                if (!isExiste) {
+                    const usuarioNovo = {
+                        usuario: usuario.valor,
+                        tipo: tipo.valor,
+                        sexo: sexo.valor
+                    };
+    
+                    window.localStorage.setItem('usuario', JSON.stringify(usuarioNovo));
+                    navegar('/');
+                } else {
+                    window.localStorage.removeItem('usuario');
+                    setErro('Usuário já está cadastrado!');
+                }
+            }, 300);
+        } else {
+            setErro('Campos inválidos!');
         }
 
-        setTimeout(() => {
-            const { usuarios } = db;
-
-            const isExiste = usuarios.find((usuarioDB) => usuarioDB.usuario === usuario.valor);
-    
-            if (!isExiste) {
-                const usuarioNovo = {
-                    usuario: usuario.valor,
-                    tipo: tipo.valor,
-                    sexo: sexo.valor
-                };
-
-                window.localStorage.setItem('usuario', JSON.stringify(usuarioNovo));
-                navegar('/');
-            } else {
-                window.localStorage.removeItem('usuario');
-                setErro('Usuário já está cadastrado!');
-            }
-    
-            setLoading(false);
-        }, 300);
+        setLoading(false);
     };
 
     return (
@@ -65,40 +67,21 @@ const Cadastrar = () => {
     
                 <div className={estilos.containerInput}>
                     <select name="tipo" onChange={tipo.onChange}>
-                        <option disabled value="">Seleciona o tipo de usuário...</option>
-                        <option value="EMPRESA">Empresa</option>
+                        <option value="">Seleciona o tipo de usuário...</option>
                         <option value="PESSOA">Pessoa</option>
+                        <option value="EMPRESA">Empresa</option>
                     </select>
-                    { sexo.erro && <small>{sexo.erro}</small> }
+                    { tipo.erro && <small className={estilos.erro}>{tipo.erro}</small> }
                 </div>
 
-                <div className={estilos.containerInput}>
-                    <label htmlFor="M">
-                        Masculino: 
-                        <input
-                            type="radio"
-                            name="sexo"
-                            id="M"
-                            value="M"
-                            checked={sexo.valor === "M"}
-                            onChange={sexo.onChange}
-                        />
-                    </label>
-
-                    <label htmlFor="F">
-                        Feminino: 
-                        <input
-                            type="radio"
-                            name="sexo"
-                            id="F"
-                            value="F"
-                            checked={sexo.valor === "F"}
-                            onChange={sexo.onChange}
-                        />
-                    </label>
-
-                    { sexo.erro && <small>{sexo.erro}</small> }
-                </div>
+                {tipo.valor === 'PESSOA' && (
+                    <div className={estilos.containerInput}>
+                        <h3>escolha o sexo:</h3>
+                        <Radio opcoes={['M', 'F']} labels={['Masculino', 'Feminino']} {...sexo} />
+    
+                        { sexo.erro && <small className={estilos.erro}>{sexo.erro}</small> }
+                    </div>
+                )}
 
                 <button disabled={loading}>Cadastrar</button>
                 { erro && <small className={estilos.erro}>{erro}</small> }
