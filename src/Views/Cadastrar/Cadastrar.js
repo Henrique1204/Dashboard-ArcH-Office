@@ -1,11 +1,12 @@
 import React from "react";
 import estilos from "./Cadastrar.module.css";
 import Input from '../../Componentes/Form/Input/Input.js';
+import Radio from "../../Componentes/Form/Radio/Radio.js";
+import Select from "../../Componentes/Form/Select/Select.js";
+import Button from "../../Componentes/Form/Button/Button.js";
 import useForm from '../../Hooks/useForm.js';
 import { useNavigate } from 'react-router-dom';
 import db from '../../db.json';
-import Radio from "../../Componentes/Form/Radio/Radio";
-import Select from "../../Componentes/Form/Select/Select";
 
 const Cadastrar = () => {
     const usuario = useForm();
@@ -83,7 +84,7 @@ const Cadastrar = () => {
                     </div>
                 )}
 
-                <button disabled={loading}>Cadastrar</button>
+                <Button loading={loading} texto="Cadastrar" />
                 { erro && <small className={estilos.erro}>{erro}</small> }
             </form>
         </section>

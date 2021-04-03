@@ -45,31 +45,6 @@
     display: block;
 }
 
-.sessao button {
-    width: 200px;
-    padding: 0.5rem;
-    border: none;
-    margin: 0 auto;
-    font-size: 1rem;
-    border-radius: 6px;
-    color: #FFF;
-    background-color: var(--amarelo);
-    display: block;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    outline: none;
-}
-
-.sessao button[disabled] {
-    opacity: 0.8;
-    cursor: not-allowed;
-}
-
-.sessao button:hover, .sessao button:focus {
-    box-shadow: vaR(--sombra);
-    transform: scale(1.1);
-}
-
 .Link {
     margin-top: 1rem;
     text-decoration: underline;

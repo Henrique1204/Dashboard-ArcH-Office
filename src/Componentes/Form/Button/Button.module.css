@@ -1,0 +1,24 @@
+.btn {
+    width: 200px;
+    padding: 0.5rem;
+    border: none;
+    margin: 0 auto;
+    font-size: 1rem;
+    border-radius: 6px;
+    color: #FFF;
+    background-color: var(--amarelo);
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.btn[disabled] {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+.btn:hover, .btn:focus {
+    box-shadow: var(--sombra);
+    transform: scale(1.1);
+}

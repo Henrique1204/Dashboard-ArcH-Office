@@ -1,6 +1,7 @@
 import React from "react";
 import estilos from "./Login.module.css";
 import Input from '../../Componentes/Form/Input/Input.js';
+import Button from "../../Componentes/Form/Button/Button.js";
 import useForm from '../../Hooks/useForm.js';
 import { useNavigate } from 'react-router-dom';
 import db from '../../db.json';
@@ -55,7 +56,7 @@ const Login = () => {
                     <i className="fa fa-unlock-alt"></i>
                 </div>
 
-                <button disabled={loading}>Entrar</button>
+                <Button loading={loading} texto="Entrar" />
                 { erro && <small className={estilos.erro}>{erro}</small> }
             </form>
         </section>
