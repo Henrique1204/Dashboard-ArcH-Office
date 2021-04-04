@@ -1,0 +1,55 @@
+.usuarios {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.cabecalho {
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(37, 35, 35, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho h1 {
+    font-family: var(--fonte-raleway);
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--amarelo);
+}
+
+.busca {
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+} 
+
+.busca input {
+    padding: 0.75rem;
+    border: 1px solid rgb(37, 35, 35);
+    border-radius: 2px 0 0 2px;
+    font-size: 1rem;
+    display: block;
+    outline: none;
+}
+
+.busca button {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0 2px 2px 0;
+    font-size: 1rem;
+    color: #FFF;
+    background-color: rgb(37, 35, 35);
+    display: block;
+    cursor: pointer;
+    outline: none;
+}
+
+.busca button i {
+    transition: 0.3s ease;
+}
+
+.busca button:hover i, .busca button:focus i {
+    transform: scale(1.4);
+}

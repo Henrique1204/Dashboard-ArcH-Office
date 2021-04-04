@@ -21,7 +21,6 @@ const MenuNavegacao = () => {
                     <NavLink
                         to="/usuarios"
                         activeClassName={estilos.ativo}
-                        className={estilos.inativo}
                     >
                         usuários
                     </NavLink>

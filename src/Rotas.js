@@ -3,6 +3,7 @@ import Login from './Views/Login/Login.js';
 import Cadastrar from './Views/Cadastrar/Cadastrar.js';
 import Home from './Views/Home/Home.js';
 import Conteudo from './Views/Conteudo/Conteudo.js';
+import Usuarios from './Views/Usuarios/Usuarios.js';
 import { Routes, Route } from 'react-router-dom';
 
 const rotas = () => {
@@ -14,6 +15,7 @@ const rotas = () => {
 
                 <Route path="/" element={<Home />}/>
                 <Route path="/conteudos" element={<Conteudo />}/>
+                <Route path="/usuarios" element={<Usuarios />}/>
             </Routes>
         </main>
     );

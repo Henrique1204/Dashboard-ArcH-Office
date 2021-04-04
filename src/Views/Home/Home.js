@@ -10,7 +10,7 @@ const Home = () => {
 
                 <ul className={estilos.listaCards}>
                     <li>
-                        <CardHome icone="users" titulo="Usuários" rota="usuarios" ativo={false} />
+                        <CardHome icone="users" titulo="Usuários" rota="usuarios" ativo={true} />
                     </li>
 
                     <li>
