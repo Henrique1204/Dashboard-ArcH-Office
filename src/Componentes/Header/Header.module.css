@@ -46,10 +46,26 @@
     border: none;
     border-radius: 50%;
     margin-left: 92px;
-    background-color: #FFF;
+    color: #FFF;
     position: relative;
     cursor: pointer;
     outline: none;
+}
+
+.usuario.cinza {
+    background-color: var(--cinza);
+}
+
+.usuario.rosa {
+    background-color: #FD90B7;
+}
+
+.usuario.azul {
+    background-color: #7F9FF3;
+}
+
+.inicial {
+    font-size: 2rem;
 }
 
 .notificacao {
@@ -57,7 +73,6 @@
     height: 1.25rem;
     font-size: 0.75rem;
     border-radius: 50%;
-    color: #FFF;
     background-color: var(--amarelo);
     display: flex;
     justify-content: center;

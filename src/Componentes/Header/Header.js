@@ -7,7 +7,17 @@ import { useLocation } from 'react-router';
 
 const Header = () => {
     const [modalAtivo, setModalAtivo] = React.useState(false);
+    const [classe, setClasse] = React.useState(null);
+    const [inicial, setInicial] = React.useState('');
     const { pathname } = useLocation();
+
+    React.useEffect(() => {
+        if (window.localStorage.getItem('usuario')) {
+            const usuario = JSON.parse(window.localStorage.getItem('usuario'));
+            setInicial(usuario.usuario[0]);
+            setClasse(() => (!usuario.sexo) ? 'cinza' : (usuario.sexo === 'F') ? 'rosa' : 'azul');
+        }
+    }, [pathname]);
 
     if (pathname === '/login' || pathname === '/cadastrar') return null;
 
@@ -24,7 +34,11 @@ const Header = () => {
                         <i className="fa fa-search"></i>
                     </div>
 
-                    <button className={estilos.usuario} onClick={() => setModalAtivo(!modalAtivo)}>
+                    <button
+                        className={`${estilos.usuario} ${(classe) ? estilos[classe] : ''}`}
+                        onClick={() => setModalAtivo(!modalAtivo)}
+                    >
+                        <span className={estilos.inicial}>{inicial}</span>
                         <span className={estilos.notificacao}>2</span>
                     </button>
 
