@@ -47,6 +47,10 @@
     margin-top: 1rem;
 }
 
+.modalAdicionar {
+    max-width: 460px;
+}
+
 @media (max-width: 990px) {
     .listaCards li {
         max-width: 340px;

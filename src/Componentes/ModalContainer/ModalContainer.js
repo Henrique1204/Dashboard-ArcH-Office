@@ -9,8 +9,8 @@ const ModalContainer = ({ titulo, setAtivo, children, classe }) => {
     }
   
     return (
-      <div className={`${estilos.Modal} ${(classe) ? classe : ''}`} onClick={fecharModal} ref={fundoRef}>
-        <div className={estilos.CardModal}>
+      <div className={estilos.Modal} onClick={fecharModal} ref={fundoRef}>
+        <div className={`${estilos.CardModal} ${(classe) ? classe : ''}`}>
           <button className={estilos.ModalFechar} onClick={() => setAtivo(false)}>
             <i className="fa fa-times"></i>
           </button>
