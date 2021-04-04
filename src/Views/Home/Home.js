@@ -10,23 +10,23 @@ const Home = () => {
 
                 <ul className={estilos.listaCards}>
                     <li>
-                        <CardHome icone="users" titulo="Usuários" rota="usuarios" />
+                        <CardHome icone="users" titulo="Usuários" rota="usuarios" ativo={false} />
                     </li>
 
                     <li>
-                        <CardHome icone="file" titulo="Relatórois" rota="relatorios" />
+                        <CardHome icone="file" titulo="Relatórois" rota="relatorios" ativo={false} />
                     </li>
 
                     <li>
-                        <CardHome icone="play" titulo="Conteúdos" rota="conteudos" />
+                        <CardHome icone="play" titulo="Conteúdos" rota="conteudos"ativo={true} />
                     </li>
 
                     <li>
-                        <CardHome icone="calendar" titulo="Eventos" rota="eventos" />
+                        <CardHome icone="calendar" titulo="Eventos" rota="eventos" ativo={false} />
                     </li>
 
                     <li>
-                        <CardHome icone="tv" titulo="Serviços" rota="servico" />
+                        <CardHome icone="tv" titulo="Serviços" rota="servico" ativo={false} />
                     </li>
                 </ul>
             </div>

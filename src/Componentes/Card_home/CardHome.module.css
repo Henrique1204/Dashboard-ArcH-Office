@@ -12,6 +12,13 @@
     overflow: hidden;
 }
 
+.card.inativo {
+    transform: scale(0.9);
+    opacity: 0.9;
+    box-shadow: none;
+    pointer-events: none;
+}
+
 .card::before {
     content: '';
     width: 2rem;
@@ -45,4 +52,8 @@
     font-family: var(--fonte-raleway);
     font-size: 1rem;
     color: var(--cor-fundo);
+}
+
+.card.inativo i, .card.inativo i h2 {
+    color: var(--cinza);
 }
