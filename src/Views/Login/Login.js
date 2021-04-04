@@ -31,13 +31,13 @@ const Login = () => {
             if (isExiste) {
                 const { usuario, tipo, sexo } = isExiste;
                 window.localStorage.setItem('usuario', JSON.stringify({ usuario, tipo, sexo }));
+                setLoading(false);
                 navegar('/');
             } else {
                 window.localStorage.removeItem('usuario');
+                setLoading(false);
                 setErro('Usuário não existe!');
             }
-    
-            setLoading(false);
         }, 300);
     };
 

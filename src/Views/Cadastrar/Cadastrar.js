@@ -39,17 +39,17 @@ const Cadastrar = () => {
                     };
     
                     window.localStorage.setItem('usuario', JSON.stringify(usuarioNovo));
+                    setLoading(false);
                     navegar('/');
                 } else {
                     window.localStorage.removeItem('usuario');
                     setErro('Usuário já está cadastrado!');
+                    setLoading(false);
                 }
             }, 300);
         } else {
             setErro('Campos inválidos!');
         }
-
-        setLoading(false);
     };
 
     return (
