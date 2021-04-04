@@ -1,0 +1,153 @@
+.menu {
+    position: fixed;
+    top: 83px;
+    z-index: 1;
+}
+
+.hamburguer {
+    padding: 0.5rem;
+    height: 40px;
+    border: none;
+    background-color: var(--cor-fundo);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    overflow: hidden;
+}
+
+.hamburguer .barrinha {
+    width: 1.5rem;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #FFF;
+    display: block;
+    transition: 0.4s ease;
+}
+
+.hamburguer .barrinha + .barrinha {
+    margin-top: 0.3rem;
+}
+
+.hamburguer.ativo {
+    background-color: rgba(37, 35, 35, 0.75);;
+}
+
+.hamburguer.ativo .barrinha:nth-child(1) {
+    transform: rotate(45deg);
+    position: absolute;
+    top: 21px;
+}
+
+.hamburguer.ativo .barrinha:nth-child(2) {
+    transform: translateX(200%);
+}
+
+.hamburguer.ativo .barrinha:nth-child(3) {
+    transform: rotate(-45deg);
+    position: absolute;
+}
+
+.navegacao {
+    max-width: 0;
+    margin-left: 2.5rem;
+    height: 40px;
+    border-radius: 0 0 40px 0;
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    background-color: rgba(37, 35, 35, 0.75);
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-width 0.4s ease;
+}
+
+.navegacao.ativo {
+    max-width: 500px;
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+    pointer-events: initial;
+}
+
+.navegacao li {
+    opacity: 0;
+}
+
+.navegacao.ativo li {
+    opacity: 1;
+}
+
+.navegacao li + li {
+    margin-left: 0.5rem;
+}
+
+.navegacao a {
+    padding: 0.5rem;
+    display: block;
+    transition: 0.2s ease;
+}
+
+.navegacao a.inativo {
+    color: var(--cinza);
+    pointer-events: none;
+}
+
+.navegacao a:hover, .navegacao a:focus, a.ativo {
+    color: var(--amarelo);
+}
+
+@media (max-width: 990px) {
+    .navegacao {
+        height: 48px;
+        margin-left: 3rem;
+    }
+
+    .hamburguer {
+        width: 48px;
+        height: 48px;
+    }
+
+    .hamburguer .barrinha + .barrinha {
+        margin-top: 0.4rem;
+    }
+
+    .hamburguer.ativo .barrinha:nth-child(1) {
+        top: 26px;
+    }
+}
+
+@media (max-width: 730px) {
+    .menu {
+        top: 155px;
+    }
+
+    .navegacao {
+        width: 100vw;
+        max-width: 0;
+        margin: 0;
+        height: calc(100vh - 155px);
+        border-radius: 0;
+        flex-direction: column;
+        background-color: rgb(37, 35, 35);
+    }
+
+    .navegacao.ativo {
+        max-width: 100vw;
+        padding-top: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        pointer-events: initial;
+    }
+
+    .navegacao li {
+        font-size: 1.25rem;
+    }
+    
+    .navegacao li + li {
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+}
