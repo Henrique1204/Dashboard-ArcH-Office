@@ -13,6 +13,7 @@ const Input = ({ label, name, valor, onChange, erro, onBlur }) => {
                 value={valor}
                 onChange={onChange}
                 onBlur={onBlur}
+                rows="5"
             ></textarea>
 
             { erro && <small className={estilos.erro}>{erro}</small> }

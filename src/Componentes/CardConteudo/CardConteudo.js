@@ -1,10 +1,13 @@
 import React from 'react';
 import estilos from './CardConteudo.module.css';
 
-const CardConteudo = ({ titulo, descricao, link }) => {
+const CardConteudo = ({ titulo, descricao, link, editar }) => {
     return (
         <div className={estilos.card}>
-            <button className={estilos.btnEditar}>
+            <button
+                className={estilos.btnEditar}
+                onClick={() => editar({ titulo, descricao, link })}
+            >
                 <i className="fa fa-pencil"></i>
             </button>
 

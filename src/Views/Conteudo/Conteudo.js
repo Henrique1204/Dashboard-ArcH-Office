@@ -14,20 +14,29 @@ const Conteudo = () => {
     const link = useForm();
 
     const [modalAdicionar, setModalAdicionar] = React.useState(false);
+    const [modalEditar, setModalEditar] = React.useState(false);
 
-    React.useEffect(() => {
-        if (!modalAdicionar) {
-            titulo.resetar();
-            descricao.resetar();
-            link.resetar();
-        }
-    }, [modalAdicionar, titulo, link, descricao]);
+    const adicionar = () => {
+        setModalAdicionar(true);
+
+        titulo.resetar();
+        descricao.resetar();
+        link.resetar();
+    }
+
+    const editar = (dados) => {
+        setModalEditar(true);
+
+        titulo.setValor(dados.titulo);
+        descricao.setValor(dados.descricao);
+        link.setValor(dados.link);
+    };
 
     return (
         <section className={` ${estilos.conteudo}`}>
             <header className={`container ${estilos.cabecalho}`}>
                 <h1>Conteúdos</h1>
-                <button className={estilos.btnAdicionar} onClick={() => setModalAdicionar(true)}>
+                <button className={estilos.btnAdicionar} onClick={adicionar}>
                     Adicionar Novo
                 </button>
             </header>
@@ -35,7 +44,12 @@ const Conteudo = () => {
             <ul className={`container ${estilos.listaCards}`}>
                 { db.conteudos.map(({ titulo, descricao, link }, i) => (
                     <li key={`conteudo_${i}`}>
-                        <CardConteudo titulo={titulo} descricao={descricao} link={link} />
+                        <CardConteudo
+                            titulo={titulo}
+                            descricao={descricao}
+                            link={link}
+                            editar={editar}
+                        />
                     </li>
                 )) }
             </ul>
@@ -59,6 +73,28 @@ const Conteudo = () => {
                     </div>
 
                     <Button texto="Adicionar" />
+                </ModalContainer>
+            ) }
+
+            { modalEditar && (
+                <ModalContainer
+                    titulo="Editar"
+                    setAtivo={setModalEditar}
+                    classe={estilos.modalEditar}
+                >
+                    <div className={estilos.campo}>
+                        <Input label="Titulo:" type="text" name="tituloEditar" {...titulo} />
+                    </div>
+
+                    <div className={estilos.campo}>
+                        <Textarea label="Descrição:" name="descricaoEditar" {...descricao} />
+                    </div>
+
+                    <div className={estilos.campo}>
+                        <Input label="Link:" type="text" name="linkEditar" {...link} />
+                    </div>
+
+                    <Button texto="Editar" />
                 </ModalContainer>
             ) }
         </section>

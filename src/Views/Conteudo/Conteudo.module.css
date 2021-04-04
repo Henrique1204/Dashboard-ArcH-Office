@@ -47,7 +47,7 @@
     margin-top: 1rem;
 }
 
-.modalAdicionar {
+.modalAdicionar, .modalEditar {
     max-width: 460px;
 }
 
