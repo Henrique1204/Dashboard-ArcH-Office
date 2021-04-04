@@ -1,19 +1,18 @@
 import React from 'react';
 import estilos from './Usuarios.module.css';
+import CabecalhoSessao from '../../Componentes/CabecalhoSessao/CabecalhoSessao.js';
 
 const Usuarios = () => {
     return (
         <section className={estilos.usuarios}>
-            <header className={`container ${estilos.cabecalho}`}>
-                <h1>Conteúdos</h1>
-
+            <CabecalhoSessao titulo="Usuários">
                 <form className={estilos.busca}>
                     <input name="buscaUsuarios" placeholder="Buscar usuários" />
                     <button>
                         <i className="fa fa-search"></i>
                     </button>
                 </form>
-            </header>
+            </CabecalhoSessao>
 
             <ul className={`container ${estilos.listaCards}`}>
                 <li>

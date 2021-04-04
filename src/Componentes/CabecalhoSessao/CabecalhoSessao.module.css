@@ -1,0 +1,29 @@
+.usuarios {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.cabecalho {
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(37, 35, 35, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho h1 {
+    font-family: var(--fonte-raleway);
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--amarelo);
+}
+
+@media (max-width: 730px) {
+    .cabecalho h1 {
+        width: 100%;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}

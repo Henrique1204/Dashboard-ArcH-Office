@@ -1,5 +1,6 @@
 import React from 'react';
 import estilos from './Conteudo.module.css';
+import CabecalhoSessao from '../../Componentes/CabecalhoSessao/CabecalhoSessao.js';
 import CardConteudo from '../../Componentes/CardConteudo/CardConteudo.js';
 import ModalContainer from '../../Componentes/ModalContainer/ModalContainer.js';
 import Input from  '../../Componentes/Form/Input/Input.js';
@@ -39,12 +40,11 @@ const Conteudo = () => {
 
     return (
         <section className={` ${estilos.conteudo}`}>
-            <header className={`container ${estilos.cabecalho}`}>
-                <h1>Conteúdos</h1>
+            <CabecalhoSessao titulo="Conteúdos">
                 <button className={estilos.btnAdicionar} onClick={adicionar}>
                     Adicionar Novo
                 </button>
-            </header>
+            </CabecalhoSessao>
 
             <ul className={`container ${estilos.listaCards}`}>
                 { db.conteudos.map(({ titulo, descricao, link }, i) => (
