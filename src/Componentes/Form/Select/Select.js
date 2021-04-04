@@ -1,9 +1,10 @@
 import React from 'react';
 import estilos from './Select.module.css';
 
-const Select = ({ opcoes, labels, onChange, onBlur, erro }) => {
+const Select = ({ opcoes, labels, label,onChange, onBlur, erro }) => {
     return (
         <>
+            <label>{label}</label>
             <select onChange={onChange} onBlur={onBlur} className={estilos.select}>
             <option value="">Selecione a opção...</option>
                 {

@@ -71,6 +71,7 @@ const Cadastrar = () => {
                     <Select
                         opcoes={['PESSOA', 'EMPRESA']}
                         labels={['Pessoa', 'Empresa']}
+                        label="Tipo de usuário:"
                         {...tipo}
                     />
                 </div>
