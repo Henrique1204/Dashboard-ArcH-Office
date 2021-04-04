@@ -1,6 +1,7 @@
 import React from 'react';
 import estilos from './Conteudo.module.css';
 import CardConteudo from '../../Componentes/CardConteudo/CardConteudo.js';
+import ModalContainer from '../../Componentes/ModalContainer/ModalContainer.js';
 import db from '../../db.json';
 
 const Conteudo = () => {
@@ -18,6 +19,7 @@ const Conteudo = () => {
                     </li>
                 )) }
             </ul>
+    
         </section>
     );
 };
