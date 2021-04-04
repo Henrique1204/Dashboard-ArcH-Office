@@ -11,6 +11,24 @@
             "senha": "1234",
             "tipo": "PESSOA",
             "sexo": "M"
+        },
+        {
+            "usuario": "Henrique",
+            "senha": "1234",
+            "tipo": "PESSOA",
+            "sexo": "M"
+        },
+        {
+            "usuario": "Silva",
+            "senha": "1234",
+            "tipo": "PESSOA",
+            "sexo": "F"
+        },
+        {
+            "usuario": "Souza",
+            "senha": "1234",
+            "tipo": "PESSOA",
+            "sexo": "F"
         }
     ],
     "notificacoes": [

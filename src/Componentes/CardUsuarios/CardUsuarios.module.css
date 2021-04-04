@@ -1,0 +1,42 @@
+.card {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 2px;
+    background-color: #FFF;
+    box-shadow: var(--sombra), inset 4px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover, .card:focus {
+    transform: scale(1.05);
+}
+
+.cinza {
+    color: var(--cinza);
+}
+
+.rosa {
+    color: #FD90B7;
+}
+
+.azul {
+    color: #7F9FF3;
+}
+
+.card h3 {
+    color: var(--cor-texto);
+}
+
+.card i {
+    font-size: 2rem;
+    transition: 0.5s ease;
+}
+
+.card:hover i, .card:focus i {
+    transform: rotate(360deg);
+}

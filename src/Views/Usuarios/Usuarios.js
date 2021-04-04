@@ -1,6 +1,8 @@
 import React from 'react';
 import estilos from './Usuarios.module.css';
 import CabecalhoSessao from '../../Componentes/CabecalhoSessao/CabecalhoSessao.js';
+import CardUsuarios from '../../Componentes/CardUsuarios/CardUsuarios.js';
+import db from '../../db.json';
 
 const Usuarios = () => {
     return (
@@ -15,10 +17,9 @@ const Usuarios = () => {
             </CabecalhoSessao>
 
             <ul className={`container ${estilos.listaCards}`}>
-                <li>
-                    <h3>Usuários</h3>
-                    <i className="fa fa-arrow-circle-right"></i>
-                </li>
+                { db.usuarios.map(({ usuario, sexo }, i) => (
+                    <CardUsuarios key={`usuario_${i}`} usuario={usuario} sexo={sexo} />
+                )) }
             </ul>
         </section>
     );
