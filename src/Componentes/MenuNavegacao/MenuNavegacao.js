@@ -1,9 +1,14 @@
 import React from 'react';
 import estilos from './MenuNavegacao.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const MenuNavegacao = () => {
     const [ativo, setAtivo] = React.useState(false);
+    const { pathname } = useLocation();
+
+    React.useEffect(() => {
+        setAtivo(false);
+    }, [pathname]);
 
     return (
         <nav className={estilos.menu}>

@@ -1,4 +1,5 @@
 .menu {
+    width: 100vw;
     position: fixed;
     top: 83px;
     z-index: 1;
@@ -122,6 +123,12 @@
 @media (max-width: 730px) {
     .menu {
         top: 155px;
+    }
+
+    .hamburguer, .hamburguer.ativo {
+        background-color: rgb(37, 35, 35);
+        top: 0;
+        right: 0;
     }
 
     .navegacao {
