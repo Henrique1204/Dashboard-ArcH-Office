@@ -6,8 +6,9 @@ import db from '../../db.json';
 
 const Usuarios = () => {
     const [usuarios, setUsuarios] = React.useState(null);
+    const [busca, setBusca] = React.useState('');
 
-    React.useEffect(() => {
+    const preencherUsuarios = () => {
         if (window.localStorage.getItem('usuario')) {
             const usuarioLogado = JSON.parse(window.localStorage.getItem('usuario'));
 
@@ -21,20 +22,46 @@ const Usuarios = () => {
         } else {
             setUsuarios(db.usuarios);
         }
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    };
+
+    React.useEffect(() => {
+        if (busca) {
+            setUsuarios((usuarios) => {
+                return usuarios.filter(({ usuario }) => {
+                    return usuario.toUpperCase().includes(busca.toUpperCase());
+                });
+            });
+        } else {
+            preencherUsuarios();
+        }
+    }, [busca]);
+
+    React.useEffect(() => {
+        preencherUsuarios();
     }, []);
 
     return (
         <section className={estilos.usuarios}>
             <CabecalhoSessao titulo="Usuários">
-                <form className={estilos.busca}>
-                    <input name="buscaUsuarios" placeholder="Buscar usuários" list="usuarios" />
+                <form className={estilos.busca} onSubmit={handleSubmit}>
+                    <input
+                        name="buscaUsuarios"
+                        placeholder="Buscar usuários"
+                        list="usuarios"
+                        value={busca}
+                        onChange={({ target }) => setBusca(target.value)}
+                    />
                     <button>
                         <i className="fa fa-search"></i>
                     </button>
 
                     <datalist id="usuarios">
-                        { usuarios && usuarios.map(({ usuario }) => (
-                            <option value={usuario}>{usuario}</option>
+                        { usuarios && usuarios.map(({ usuario }, i) => (
+                            <option key={`opcao-${i}`} value={usuario}>{usuario}</option>
                         )) }
                     </datalist>
                 </form>
