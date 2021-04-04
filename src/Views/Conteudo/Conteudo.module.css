@@ -1,10 +1,10 @@
 .conteudo {
-    padding: 4rem 0;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 .cabecalho {
     width: 100%;
-    margin: 0 -10px 1rem;
     padding-bottom: 1rem;
     border-bottom: 2px solid rgba(37, 35, 35, 0.2);
     display: flex;
@@ -35,4 +35,14 @@
 
 .btnAdicionar:hover, .btnAdicionar:focus {
     transform: scale(1.1);
+}
+
+.listaCards {
+    justify-content: space-between;
+    align-items: initial;
+}
+
+.listaCards li {
+    max-width: 460px;
+    margin-top: 1rem;
 }

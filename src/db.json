@@ -16,5 +16,22 @@
     "notificacoes": [
         "Você tem essa notificação.",
         "E tem essa outra também."
+    ],
+    "conteudos": [
+        {
+            "titulo": "Os 7 serviços de arquitetura",
+            "descricao": "No conteúdo de hoje vamos falar sobre os 7 principais serviços de arquitetura que um arquiteto de soluções ou arquiteto de software executa individualmente em squads ou em times de arquitetura",
+            "link": "https://www.youtube.com/watch?v=_JgMuvpEh5c"
+        },
+        {
+            "titulo": "Elixir - Mercado de trabalho para Devs | Do Zero a Expert em Arquitetura de Software",
+            "descricao": "Entender o mercado desta tecnologia que vem ganhando notoriedade é de extrema importância para o arquiteto de software, uma vez que este conhecimento pode ajudar e muito na deliberação de utilizar ou não a tecnologia.",
+            "link": "https://www.youtube.com/watch?v=K2AxF49MCj8"
+        },
+        {
+            "titulo": "Os 5 grandes mitos sobre a profissão | Do Zero a Expert em Arquitetura de Software",
+            "descricao": "Na Live de hoje falamos sobre os 5 grandes mitos que fazem vários profissionais desistirem da profissão.",
+            "link": "https://www.youtube.com/watch?v=FYSMLTctHPc"
+        }
     ]
 }

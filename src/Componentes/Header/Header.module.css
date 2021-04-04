@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    padding: 16px;
+    padding: 1rem;
     border-top: 3px solid var(--amarelo);
     background-color: var(--cor-fundo);
     position: fixed;

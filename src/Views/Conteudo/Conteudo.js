@@ -1,27 +1,22 @@
 import React from 'react';
 import estilos from './Conteudo.module.css';
+import CardConteudo from '../../Componentes/CardConteudo/CardConteudo.js';
+import db from '../../db.json';
 
 const Conteudo = () => {
     return (
-        <section className={`container ${estilos.conteudo}`}>
-            <header className={estilos.cabecalho}>
+        <section className={` ${estilos.conteudo}`}>
+            <header className={`container ${estilos.cabecalho}`}>
                 <h1>Conteúdos</h1>
                 <button className={estilos.btnAdicionar}>Adicionar Novo</button>
             </header>
 
-            <ul className={estilos.listaCard}>
-                <li>
-                    <h2>Os 7 serviços de arquitetura</h2>
-                    <p>No conteúdo de hoje vamos falar sobre os 7 principais serviços de arquitetura que um arquiteto de soluções ou arquiteto de software executa individualmente em squads ou em times de arquitetura</p>
-
-                    <a
-                        href="https://www.youtube.com/watch?v=_JgMuvpEh5c"
-                        rel="noreferrer"
-                        target="_blank"
-                    >
-                        Assistir
-                    </a>
-                </li>
+            <ul className={`container ${estilos.listaCards}`}>
+                { db.conteudos.map(({ titulo, descricao, link }, i) => (
+                    <li key={`conteudo_${i}`}>
+                        <CardConteudo titulo={titulo} descricao={descricao} link={link} />
+                    </li>
+                )) }
             </ul>
         </section>
     );
