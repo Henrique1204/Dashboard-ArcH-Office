@@ -4,8 +4,6 @@ import estilos from './Footer.module.css';
 
 const Footer = () => {
     const { pathname } = useLocation();
-
-    console.log(pathname);
     if (pathname === '/login' || pathname === '/cadastrar') return null;
 
     return (

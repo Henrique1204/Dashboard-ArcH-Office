@@ -13,3 +13,21 @@
     text-align: center;
     color: #FFF;
 }
+
+.listaCards {
+    margin-left: -10px;
+    margin-right: -10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listaCards li {
+    width: 164px;
+    margin: 0 15px;
+}
+
+.listaCards li:first-child, .listaCards li:last-child {
+    margin-left: 10px;
+}
