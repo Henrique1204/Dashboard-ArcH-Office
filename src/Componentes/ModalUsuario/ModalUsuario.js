@@ -10,6 +10,7 @@ const ModalUsuario = ({ setAtivo }) => {
 
     const logout = () => {
         window.localStorage.removeItem('usuario');
+        setAtivo(false);
         navegar('/login');
     };
 
@@ -20,7 +21,7 @@ const ModalUsuario = ({ setAtivo }) => {
             const { usuario } = JSON.parse(usuarioLogado);
             setNome(usuario);
 
-            setNotificacoes(db.notificacoes)
+            setNotificacoes(db.notificacoes);
         }
     }, []);
 

@@ -5,6 +5,7 @@
     background-color: var(--cor-fundo);
     position: fixed;
     top: 0;
+    z-index: 1;
 }
 
 .logo {
