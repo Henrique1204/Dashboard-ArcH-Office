@@ -1,6 +1,6 @@
 import React from 'react';
 import estilos from './Home.module.css';
-import CardHome from '../../Componentes/Card_home/CardHome.js';
+import CardHome from '../../Componentes/CardHome/CardHome.js';
 
 const Home = () => {
     return (

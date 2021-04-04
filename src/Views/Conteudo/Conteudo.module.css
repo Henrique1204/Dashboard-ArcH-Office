@@ -1,0 +1,38 @@
+.conteudo {
+    padding: 4rem 0;
+}
+
+.cabecalho {
+    width: 100%;
+    margin: 0 -10px 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(37, 35, 35, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho h1 {
+    font-family: var(--fonte-raleway);
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--amarelo);
+}
+
+.btnAdicionar {
+    width: 220px;
+    padding: 12px;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #FFF;
+    background-color: var(--cor-fundo);
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btnAdicionar:hover, .btnAdicionar:focus {
+    transform: scale(1.1);
+}
