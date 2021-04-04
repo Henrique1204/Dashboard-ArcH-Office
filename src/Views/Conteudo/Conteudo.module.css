@@ -51,6 +51,10 @@
     max-width: 460px;
 }
 
+.campo {
+    margin-bottom: 1rem;
+}
+
 @media (max-width: 990px) {
     .listaCards li {
         max-width: 340px;

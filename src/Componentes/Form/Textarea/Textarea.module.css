@@ -1,0 +1,25 @@
+.label {
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 2px;
+    border: 2px solid var(--cinza);
+    font-size: 1rem;
+    background-color: #F4F4F4;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.textarea:hover, .textarea:focus {
+    border-color: var(--amarelo);
+    background-color: #FFF;
+    box-shadow: 2px 2px 4px rgba(37, 35, 35, 0.2);
+}
+
+.erro {
+    color: #F44;
+}
