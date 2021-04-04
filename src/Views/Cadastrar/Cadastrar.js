@@ -76,14 +76,17 @@ const Cadastrar = () => {
                     />
                 </div>
 
-                {tipo.valor === 'PESSOA' && (
-                    <div className={estilos.campo}>
-                        <h3>escolha o sexo:</h3>
-                        <Radio opcoes={['M', 'F']} labels={['Masculino', 'Feminino']} {...sexo} />
-    
-                        { sexo.erro && <small className={estilos.erro}>{sexo.erro}</small> }
-                    </div>
-                )}
+                <div
+                    className={`
+                        ${estilos.campo} 
+                        ${(tipo.valor === 'PESSOA') ? estilos.ativo : estilos.inativo}
+                    `}
+                >
+                    <h3>escolha o sexo:</h3>
+                    <Radio opcoes={['M', 'F']} labels={['Masculino', 'Feminino']} {...sexo} />
+
+                    { sexo.erro && <small className={estilos.erro}>{sexo.erro}</small> }
+                </div>
 
                 <Button loading={loading} texto="Cadastrar" />
                 { erro && <small className={estilos.erro}>{erro}</small> }
