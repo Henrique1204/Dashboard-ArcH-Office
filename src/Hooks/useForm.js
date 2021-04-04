@@ -19,7 +19,7 @@ const useForm = (tipo) => {
     const [valor, setValor] = React.useState('');
     const [erro, setErro] = React.useState(null);
 
-    function validar(valor) {
+    const validar = (valor) => {
         // Testa se foi pedido validação.
         if (tipo === false) return true;
 
@@ -34,7 +34,12 @@ const useForm = (tipo) => {
             setErro(null);
             return true;
         }
-    }
+    };
+
+    const resetar = () => {
+        setValor('');
+        setErro(null);
+    };
 
     return {
         valor,
@@ -45,7 +50,8 @@ const useForm = (tipo) => {
             setValor(target.value);
         },
         validar: () => validar(valor),
-        onBlur: () => validar(valor)
+        onBlur: () => validar(valor),
+        resetar
     }
 };
 
