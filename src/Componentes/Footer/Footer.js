@@ -1,7 +1,13 @@
 import React from 'react';
+import { useLocation } from 'react-router';
 import estilos from './Footer.module.css';
 
 const Footer = () => {
+    const { pathname } = useLocation();
+
+    console.log(pathname);
+    if (pathname === '/login' || pathname === '/cadastrar') return null;
+
     return (
         <footer className={estilos.footer}>
             <div className="container">

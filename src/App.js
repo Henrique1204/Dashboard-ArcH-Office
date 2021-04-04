@@ -3,15 +3,21 @@ import './App.css';
 import Header from './Componentes/Header/Header.js';
 import Rotas from './Rotas.js';
 import Footer from './Componentes/Footer/Footer.js';
-import { BrowserRouter } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 const App = () => {
+  const navegar = useNavigate();
+
+  React.useEffect(() => {
+    if (!window.localStorage.getItem('usuario')) navegar('/login');
+  }, [navegar]);
+
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <Rotas />
       <Footer />
-    </BrowserRouter>
+    </>
   );
 };
 

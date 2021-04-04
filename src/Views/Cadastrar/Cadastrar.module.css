@@ -1,10 +1,17 @@
 .sessao {
     height: 100vh;
     padding: 0 1rem;
+    margin-top: -83px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 730px) {
+    .sessao {
+        margin-top: -155px;
+    }
 }
 
 .sessao h1 {
