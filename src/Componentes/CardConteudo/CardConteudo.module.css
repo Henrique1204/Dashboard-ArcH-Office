@@ -68,3 +68,18 @@
 .btnExcluir:hover, .btnExcluir:focus {
     transform: scale(1.1);
 }
+
+@media (max-width: 990px) {
+    .card {
+        padding: 3rem;
+    }
+
+    .card button {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .btnEditar {
+        right: 3rem;
+    }
+}
