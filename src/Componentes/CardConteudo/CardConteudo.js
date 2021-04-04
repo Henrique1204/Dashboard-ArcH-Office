@@ -1,7 +1,7 @@
 import React from 'react';
 import estilos from './CardConteudo.module.css';
 
-const CardConteudo = ({ titulo, descricao, link, editar }) => {
+const CardConteudo = ({ titulo, descricao, link, editar, deletar }) => {
     return (
         <div className={estilos.card}>
             <button
@@ -11,7 +11,7 @@ const CardConteudo = ({ titulo, descricao, link, editar }) => {
                 <i className="fa fa-pencil"></i>
             </button>
 
-            <button className={estilos.btnExcluir}>
+            <button className={estilos.btnExcluir} onClick={deletar}>
                 <i className="fa fa-trash"></i>
             </button>
 

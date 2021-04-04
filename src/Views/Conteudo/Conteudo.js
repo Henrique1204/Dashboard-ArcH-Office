@@ -15,6 +15,7 @@ const Conteudo = () => {
 
     const [modalAdicionar, setModalAdicionar] = React.useState(false);
     const [modalEditar, setModalEditar] = React.useState(false);
+    const [modalDeletar, setModalDeletar] = React.useState(false);
 
     const adicionar = () => {
         setModalAdicionar(true);
@@ -31,6 +32,10 @@ const Conteudo = () => {
         descricao.setValor(dados.descricao);
         link.setValor(dados.link);
     };
+
+    const deletar = () => {
+        setModalDeletar(true);
+    }
 
     return (
         <section className={` ${estilos.conteudo}`}>
@@ -49,6 +54,7 @@ const Conteudo = () => {
                             descricao={descricao}
                             link={link}
                             editar={editar}
+                            deletar={deletar}
                         />
                     </li>
                 )) }
@@ -97,6 +103,22 @@ const Conteudo = () => {
                     <Button texto="Editar" />
                 </ModalContainer>
             ) }
+
+            { modalDeletar && (
+                <ModalContainer
+                    titulo="Deletar"
+                    setAtivo={setModalDeletar}
+                    classe={estilos.modalDeletar}
+                >
+                    <p>Certeza que deseja deletar?</p>
+
+                    <button className={estilos.sim}>Sim</button>
+                    <button className={estilos.nao} onClick={() => setModalDeletar(false)}>
+                        Não
+                    </button>
+                </ModalContainer>
+            ) }
+            
         </section>
     );
 };
