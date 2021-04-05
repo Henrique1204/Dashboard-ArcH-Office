@@ -1,5 +1,6 @@
 import React from 'react';
 import estilos from './Conteudo.module.css';
+import Head from '../../Head.js';
 import CabecalhoSessao from '../../Componentes/CabecalhoSessao/CabecalhoSessao.js';
 import CardConteudo from '../../Componentes/CardConteudo/CardConteudo.js';
 import ModalContainer from '../../Componentes/ModalContainer/ModalContainer.js';
@@ -40,6 +41,8 @@ const Conteudo = () => {
 
     return (
         <>
+            <Head title="Conteúdos" description="Lista de conteúdos do nosso dashboard." />
+
             <section className={`animarEntrada ${estilos.conteudo}`}>
                 <CabecalhoSessao titulo="Conteúdos">
                     <button className={estilos.btnAdicionar} onClick={adicionar}>

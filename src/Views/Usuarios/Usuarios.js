@@ -3,6 +3,7 @@ import estilos from './Usuarios.module.css';
 import CabecalhoSessao from '../../Componentes/CabecalhoSessao/CabecalhoSessao.js';
 import CardUsuarios from '../../Componentes/CardUsuarios/CardUsuarios.js';
 import db from '../../db.json';
+import Head from '../../Head';
 
 const Usuarios = () => {
     const [usuarios, setUsuarios] = React.useState(null);
@@ -45,34 +46,38 @@ const Usuarios = () => {
     }, []);
 
     return (
-        <section className={`animarEntrada ${estilos.usuarios}`}>
-            <CabecalhoSessao titulo="Usuários">
-                <form className={estilos.busca} onSubmit={handleSubmit}>
-                    <input
-                        name="buscaUsuarios"
-                        placeholder="Buscar usuários"
-                        list="usuarios"
-                        value={busca}
-                        onChange={({ target }) => setBusca(target.value)}
-                    />
-                    <button>
-                        <i className="fa fa-search"></i>
-                    </button>
+        <>
+            <Head title="Usuários" description="Lista de usuários do site." />
 
-                    <datalist id="usuarios">
-                        { usuarios && usuarios.map(({ usuario }, i) => (
-                            <option key={`opcao-${i}`} value={usuario}>{usuario}</option>
-                        )) }
-                    </datalist>
-                </form>
-            </CabecalhoSessao>
+            <section className={`animarEntrada ${estilos.usuarios}`}>
+                <CabecalhoSessao titulo="Usuários">
+                    <form className={estilos.busca} onSubmit={handleSubmit}>
+                        <input
+                            name="buscaUsuarios"
+                            placeholder="Buscar usuários"
+                            list="usuarios"
+                            value={busca}
+                            onChange={({ target }) => setBusca(target.value)}
+                        />
+                        <button>
+                            <i className="fa fa-search"></i>
+                        </button>
 
-            <ul className={`container ${estilos.listaCards}`}>
-                { usuarios && usuarios.map(({ usuario, sexo }, i) => (
-                    <CardUsuarios key={`usuario_${i}`} usuario={usuario} sexo={sexo} />
-                )) }
-            </ul>
-        </section>
+                        <datalist id="usuarios">
+                            { usuarios && usuarios.map(({ usuario }, i) => (
+                                <option key={`opcao-${i}`} value={usuario}>{usuario}</option>
+                            )) }
+                        </datalist>
+                    </form>
+                </CabecalhoSessao>
+
+                <ul className={`container ${estilos.listaCards}`}>
+                    { usuarios && usuarios.map(({ usuario, sexo }, i) => (
+                        <CardUsuarios key={`usuario_${i}`} usuario={usuario} sexo={sexo} />
+                    )) }
+                </ul>
+            </section>
+        </>
     );
 };
 

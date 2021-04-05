@@ -31,10 +31,6 @@
     outline: none;
 }
 
-.busca:hover, .busca:focus {
-    transform: scale(1.1);
-}
-
 .busca i {
     position: absolute;
     right: 0.75rem;

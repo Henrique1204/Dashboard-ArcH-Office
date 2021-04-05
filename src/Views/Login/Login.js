@@ -1,5 +1,6 @@
 import React from "react";
 import estilos from "./Login.module.css";
+import Head from '../../Head.js';
 import Input from '../../Componentes/Form/Input/Input.js';
 import Button from "../../Componentes/Form/Button/Button.js";
 import useForm from '../../Hooks/useForm.js';
@@ -45,26 +46,33 @@ const Login = () => {
     };
 
     return (
-        <section className={`${estilos.sessao} animarEntrada`}>
-            <h1>Login</h1>
+        <>
+            <Head
+                title="Login"
+                description="Tela para login de usuário para acessar o dashboard."
+            />
 
-            <form onSubmit={handleSubmit}>
-                <div className={estilos.containerInput}>
-                    <Input label="Usuário:" type="text" name="usuario" {...usuario} />
-                    <i className="fa fa-user"></i>
-                </div>
+            <section className={`${estilos.sessao} animarEntrada`}>
+                <h1>Login</h1>
 
-                <div className={estilos.containerInput}>
-                    <Input label="Senha:" type="password" name="senha" {...senha} />
-                    <i className="fa fa-unlock-alt"></i>
-                </div>
+                <form onSubmit={handleSubmit}>
+                    <div className={estilos.containerInput}>
+                        <Input label="Usuário:" type="text" name="usuario" {...usuario} />
+                        <i className="fa fa-user"></i>
+                    </div>
 
-                <Button loading={loading} texto="Entrar" />
-                { erro && <small className={estilos.erro}>{erro}</small> }
-            </form>
+                    <div className={estilos.containerInput}>
+                        <Input label="Senha:" type="password" name="senha" {...senha} />
+                        <i className="fa fa-unlock-alt"></i>
+                    </div>
 
-            <Link to="/cadastrar" className={estilos.Link}>Não é Cadastrado? Clique aqui</Link>
-        </section>
+                    <Button loading={loading} texto="Entrar" />
+                    { erro && <small className={estilos.erro}>{erro}</small> }
+                </form>
+
+                <Link to="/cadastrar" className={estilos.Link}>Não é Cadastrado? Clique aqui</Link>
+            </section>
+        </>
     );
 };
 
