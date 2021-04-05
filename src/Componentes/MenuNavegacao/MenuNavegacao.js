@@ -11,7 +11,7 @@ const MenuNavegacao = () => {
     }, [pathname]);
 
     return (
-        <nav className={estilos.menu}>
+        <nav className={`${estilos.menu} ${(ativo) ? estilos.ativo : ''}`}>
             <button
                 className={`${estilos.hamburguer} ${(ativo) ? estilos.ativo : ''}`}
                 onClick={() => setAtivo(!ativo)}

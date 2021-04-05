@@ -5,7 +5,7 @@ import CardHome from '../../Componentes/CardHome/CardHome.js';
 const Home = () => {
     return (
         <section className={estilos.home}>
-            <div className="container">
+            <div className="container animarEntrada">
                 <h1>Bem vindo ao nosso Dashboard</h1>
 
                 <ul className={estilos.listaCards}>

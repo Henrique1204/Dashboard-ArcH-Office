@@ -45,7 +45,7 @@ const Usuarios = () => {
     }, []);
 
     return (
-        <section className={estilos.usuarios}>
+        <section className={`animarEntrada ${estilos.usuarios}`}>
             <CabecalhoSessao titulo="Usuários">
                 <form className={estilos.busca} onSubmit={handleSubmit}>
                     <input

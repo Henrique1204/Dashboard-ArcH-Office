@@ -39,27 +39,29 @@ const Conteudo = () => {
     }
 
     return (
-        <section className={` ${estilos.conteudo}`}>
-            <CabecalhoSessao titulo="Conteúdos">
-                <button className={estilos.btnAdicionar} onClick={adicionar}>
-                    Adicionar Novo
-                </button>
-            </CabecalhoSessao>
+        <>
+            <section className={`animarEntrada ${estilos.conteudo}`}>
+                <CabecalhoSessao titulo="Conteúdos">
+                    <button className={estilos.btnAdicionar} onClick={adicionar}>
+                        Adicionar Novo
+                    </button>
+                </CabecalhoSessao>
 
-            <ul className={`container ${estilos.listaCards}`}>
-                { db.conteudos.map(({ titulo, descricao, link }, i) => (
-                    <li key={`conteudo_${i}`}>
-                        <CardConteudo
-                            titulo={titulo}
-                            descricao={descricao}
-                            link={link}
-                            editar={editar}
-                            deletar={deletar}
-                        />
-                    </li>
-                )) }
-            </ul>
-    
+                <ul className={`container ${estilos.listaCards}`}>
+                    { db.conteudos.map(({ titulo, descricao, link }, i) => (
+                        <li key={`conteudo_${i}`}>
+                            <CardConteudo
+                                titulo={titulo}
+                                descricao={descricao}
+                                link={link}
+                                editar={editar}
+                                deletar={deletar}
+                            />
+                        </li>
+                    )) }
+                </ul>
+            </section>
+
             { modalAdicionar && (
                 <ModalContainer
                     titulo="Adicionar"
@@ -118,8 +120,7 @@ const Conteudo = () => {
                     </button>
                 </ModalContainer>
             ) }
-            
-        </section>
+        </>
     );
 };
 

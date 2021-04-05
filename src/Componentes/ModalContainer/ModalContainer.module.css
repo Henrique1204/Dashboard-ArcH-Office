@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    z-index: 3;
+    z-index: 100;
     top: 0px;
     left: 0px;
 }
@@ -21,8 +21,16 @@
     flex-direction: column;
     align-items: center;
     position: fixed;
+    z-index: 1;
     top: 0px;
     left: 0px;
+}
+
+@keyframes animarEntrada {
+    to {
+        opacity: 1;
+        transform: initial;
+    }
 }
 
 .CardModal {
@@ -34,6 +42,9 @@
     box-shadow: var(--sombra);
     position: relative;
     z-index: 1;
+    opacity: 0;
+    transform: translateY(-100px);
+    animation: animarEntrada 0.3s ease forwards;
 }
 
 .ModalFechar {
