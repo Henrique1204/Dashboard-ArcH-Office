@@ -4,6 +4,7 @@ import logoImg from '../../Assets/logo.png';
 import ModalUsuario from '../ModalUsuario/ModalUsuario.js';
 import MenuNavegacao from '../MenuNavegacao/MenuNavegacao.js';
 import { useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [modalAtivo, setModalAtivo] = React.useState(false);
@@ -25,9 +26,9 @@ const Header = () => {
         <>
             <header className={estilos.header}>
                 <div className={`${estilos.containerHeader} container`}>
-                    <div className={estilos.logo}>
+                    <Link to="/" className={estilos.logo}>
                         <img src={logoImg} alt="ArcH Office - Logo"/>
-                    </div>
+                    </Link>
 
                     <div className={estilos.busca}>
                         <input type="text" placeholder="Pesquise aqui"/>
