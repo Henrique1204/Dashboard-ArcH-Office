@@ -19,7 +19,10 @@ const Login = () => {
         setLoading(true);
         setErro(null);
 
-        if (!usuario.validar() && !senha.validar()) return setErro('Campos inválidos!');
+        if (!usuario.validar() && !senha.validar()) {
+            setLoading(false);
+            return setErro('Campos inválidos!');
+        }
 
         setTimeout(() => {
             const { usuarios } = db;
@@ -31,14 +34,14 @@ const Login = () => {
             if (isExiste) {
                 const { usuario, tipo, sexo } = isExiste;
                 window.localStorage.setItem('usuario', JSON.stringify({ usuario, tipo, sexo }));
-                setLoading(false);
-                navegar('/');
+                return navegar('/');
             } else {
                 window.localStorage.removeItem('usuario');
-                setLoading(false);
                 setErro('Usuário não existe!');
             }
         }, 300);
+
+        setLoading(false);
     };
 
     return (
